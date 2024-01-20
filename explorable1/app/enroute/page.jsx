@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from 'next/image'
+import Link from 'next/link';
 
 const page = () => {
   return (
     <div className="flex">
         <div className="w-1/2">
-            
+
         </div>
         <div className="flex w-1/2 h-screen bg-white/[0.3] items-center justify-center">
             <div className="">
@@ -22,11 +23,14 @@ const page = () => {
                         I have Safely Arrived
                         
                     </button>
-                    <button className ="mt-10 bg-[#AEACFF] border-2 border-[#D95017] rounded-lg text-white font-bold py-2 px-4 rounded text-white" style={{ textShadow: '1px 1px 2px , 1px 1px 2px #D95017' }} type="button">
-                        
-                        New destination
-                        
-                    </button>
+                    <Link href="/enterdest">
+                        <button className ="mt-10 bg-[#AEACFF] border-2 border-[#D95017] rounded-lg text-white font-bold py-2 px-4 rounded text-white" style={{ textShadow: '1px 1px 2px , 1px 1px 2px #D95017' }} type="button">
+                            
+                            New destination
+                            
+                        </button>
+                    </Link>
+                    
                     
                     </div>
                 </div>

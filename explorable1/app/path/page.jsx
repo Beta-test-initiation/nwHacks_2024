@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const page = () => {
   return (
@@ -34,11 +35,13 @@ const page = () => {
                Cancel Route
                 
             </button>
+            <Link href="/enterdest">
             <button className="ml-20  bg-[#1E2D4C] border-1 border-[#D95017] rounded-lg text-white font-bold py-2 px-4 rounded " type="button">
                 
                New Destination
                 
             </button>
+            </Link>
             
           </div>
 
