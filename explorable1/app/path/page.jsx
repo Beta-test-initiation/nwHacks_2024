@@ -18,8 +18,8 @@ const page = () => {
             </div>
         </div>
         <div className="w-1/2 flex flex-col">
-          <div className="bg-white/[0.3] rounded-lg flex items-center w-11/12">
-            <p className='text-black'>450m</p>
+          <div className="bg-white/[0.3] rounded-lg flex items-center justify-center gap-8 p-2 w-11/12">
+            <p className='text-black '>450m</p>
             <p className='text-black'>4 min</p>
             <p className='text-black'>ETA: 15:32</p>
           </div>
