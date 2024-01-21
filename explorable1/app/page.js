@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import 'regenerator-runtime/runtime';
+
+import Dictaphone from '@/components/Dictaphone';
 
 const Home = () => {
   const [isLocationAllowed, setIsLocationAllowed] = useState(false);
@@ -67,6 +70,8 @@ const Home = () => {
           <Image height={250} width={300} src="/assets/phone.png" />
         </div>
       </div>
+      {/*include the dictaphone*/}
+      <Dictaphone />
     </section>
   );
 };
