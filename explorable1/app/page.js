@@ -4,12 +4,19 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import 'regenerator-runtime/runtime';
+import { useRouter } from 'next/router';
 
 import Dictaphone from './Dictaphone';
 
 const Home = () => {
+  // const router = useRouter();
   const [isLocationAllowed, setIsLocationAllowed] = useState(false);
   const [isAudioAllowed, setIsAudioAllowed] = useState(false);
+  const [transcript, setTranscript] = useState('');
+  const handleTranscriptUpdate = (newTranscript) => {
+    setTranscript(newTranscript);
+  };
+
 
   useEffect(() => {
     // Ask for location access
@@ -45,6 +52,13 @@ const Home = () => {
       // Handle the case where getUserMedia is not supported
     }
   }, []);
+// addition
+useEffect(() => {
+  if (transcript.toLowerCase().includes("get started")) {
+    // router.push('/enterdest');
+    window.location = '/enterdest';
+  }
+}, [transcript]); //, router]);
 
   if (!isLocationAllowed || !isAudioAllowed) {
     // You can customize the message or UI for users who haven't granted permissions
@@ -72,7 +86,7 @@ const Home = () => {
       </div>
       {/*include the dictaphone*/}
       <div className='w-60 text-sm ml-32 mt-20'>
-        <Dictaphone/>
+        <Dictaphone onTranscriptUpdate={handleTranscriptUpdate}/>
       </div>
     </section>
   );

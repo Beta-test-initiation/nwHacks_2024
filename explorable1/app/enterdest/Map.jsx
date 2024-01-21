@@ -23,7 +23,10 @@ const TextToSpeechService = {
   },
 };
 
-export default function Map() {
+export default function Map({ destination }) {
+
+  
+  
   const credentials = useMemo(
     () => ({
       mapId: "659efcf1040fcba69696e7b6",
@@ -50,12 +53,14 @@ export default function Map() {
       return;
     }
 
+    console.log(venue.locations);
+
     const startLocation = venue.locations.find(
       (location) => location.id.includes("footprintcomponent")
     );
 
     const endLocation = venue.locations.find(
-      (location) => location.id.includes("pit")
+      (location) => location.id.includes(destination || "pit")
     );
 
     if (startLocation && endLocation) {
@@ -102,6 +107,9 @@ export default function Map() {
             TextToSpeechService.speak(step.instruction);
           }, index * 3000);
         });
+
+
+        
       }
     }
 
