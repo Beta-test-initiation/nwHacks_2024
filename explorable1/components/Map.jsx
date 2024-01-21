@@ -1,7 +1,8 @@
 "use client"
 
 import {
-    TGetVenueOptions,
+    TGetVenueMakerOptions,
+    getVenueMaker,
     MappedinMap,
     E_SDK_EVENT,
   } from "@mappedin/mappedin-js";
@@ -13,16 +14,14 @@ import {
   export default function Map() {
     // See Trial API key Terms and Conditions
     // https://developer.mappedin.com/api-keys
-    const options = useMemo<TGetVenueOptions>(
-      () => ({
-        venue: "mappedin-demo-mall",
-        clientId: "5eab30aa91b055001a68e996",
-        clientSecret: "RJyRXKcryCMy4erZqqCbuB1NbR66QTGNXVE0x3Pg6oCIlUR1"
-      }),
-      []
-    );
-    const mapRef = useRef<HTMLDivElement | null>(null);
-    const venue = useVenue(options);
+    const options = {
+      mapId: "65ac4f4704c23e7916b1d0c8",
+      key: "65ac610dca641a9a1399dc4b",
+      secret: "63fae86d7074a4e4ec75876f92711afd6e93d9e5f6b5609933808e6dabbad40b",
+    };
+
+    const mapRef = useRef(null);
+    const venue = getVenueMaker(options);
     const mapView = useMapView(mapRef.current, venue);
   
     useEffect(() => {
