@@ -71,7 +71,9 @@ const Home = () => {
         </div>
       </div>
       {/*include the dictaphone*/}
-      {/* <Dictaphone /> */}
+      <div className='w-60 text-sm ml-32 mt-20'>
+        <Dictaphone/>
+      </div>
     </section>
   );
 };
