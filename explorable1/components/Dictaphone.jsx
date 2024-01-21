@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
@@ -21,8 +22,6 @@ const Dictaphone = () => {
 
   return (
     <div>
-      <p>Microphone: {listening ? 'on' : 'off'}</p>
-
       <p>{transcript}</p>
     </div>
   );

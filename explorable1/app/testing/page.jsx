@@ -1,3 +1,4 @@
+
 "use client" 
 import dynamic from 'next/dynamic';
 import 'regenerator-runtime/runtime';
@@ -18,3 +19,4 @@ const Page = () => {
 };
 
 export default Page;
+
