@@ -114,7 +114,7 @@ export default function Map({ destination }) {
     }
 
     setSelectedMap(mapView.currentMap);
-  }, [mapView, venue]);
+  }, [mapView, venue, destination]);
 
   const [selectedMap, setSelectedMap] = useState();
 

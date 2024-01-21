@@ -23,13 +23,10 @@ const Page = () => {
     "The UBC nest is a beautiful meeting spot for people to hangout. Whether you want to grab a quick coffee and a cookie from bluechip, treat yourself to some sushi or go and party at the Pit, the UBC nest has it all.";
 
   const handleStartButtonClick = () => {
-    TextToSpeechService.speak(`Starting navigation to your destination`);
+    TextToSpeechService.speak("You are in the nest");
     // Additional logic for navigation here
 
-    setTimeout(() => {
-      TextToSpeechService.speak(`You are in the nest`);
-    }, 2000);
-
+   
     TextToSpeechService.speak(locationDescription);
   };
 
@@ -59,7 +56,7 @@ const Page = () => {
           value={destination}
           onChange={(e) => {
             setDestination(e.target.value);
-            console.log("Destination updated:", e.target.value);
+            
           }}
         />
         <Link href="/path">
