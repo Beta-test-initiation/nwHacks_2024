@@ -11,6 +11,17 @@ import useMapChanged from "@/hooks/useMapChanged";
 import useMapView from "@/hooks/useMapView";
 import useVenueMaker from "@/hooks/useVenueMaker";
 import "../styles.css";
+const TextToSpeechService = {
+  speak: (text) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      speechSynthesis.speak(utterance);
+    } else {
+      console.error('Speech synthesis not supported in this browser.');
+    }
+  },
+};
 
 export default function Map() {
   const credentials = useMemo(
@@ -85,6 +96,12 @@ export default function Map() {
 
         // Set the directions to state
         setDirections(directions);
+
+        directions.instructions.forEach((step, index) => {
+          setTimeout(() => {
+            TextToSpeechService.speak(step.instruction);
+          }, index * 3000);
+        });
       }
     }
 
@@ -127,18 +144,19 @@ export default function Map() {
           </select>
         )}
       </div>
-      <div id="map-container" className="rounded-lg h-400" ref={elementRef}>
+      <div id="map-container" className="rounded-lg h-600 bg-white/[0.3] rounded-lg" ref={elementRef}>
         {directions && (
           <div className="w-200 z-10 text-black">
-            <h2>Directions:</h2>
+            {/* <h2>Directions:</h2>
             <ul>
-              
             {directions.instructions.map((step, index) => {
               console.log(step.instruction);
               return <li key={index}>{step.instruction}</li>;
             })}
-            </ul>
+            </ul> */}
           </div>
+
+          
         )}
       </div>
     </div>

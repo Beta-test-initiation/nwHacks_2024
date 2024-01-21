@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Link from 'next/link'
 
 
@@ -25,16 +25,26 @@ const page = () => {
   const handleStartButtonClick = () => {
     const destinationInput = document.getElementById('username');
     
-      TextToSpeechService.speak(`Starting navigation to wherever you want`);
+      TextToSpeechService.speak(`Starting navigation to your destination`);
       // Add additional logic for navigation here
+
+      setTimeout(() => {
+        TextToSpeechService.speak(`You are in the nest`);
+      }, 2000);
+
+      
     
   };
 
+  const [hasStarted, setHasStarted] = useState(false);
+
   useEffect(() => {
     // This will be executed when the component mounts
-    handleStartButtonClick();
-  }, []); // Empty dependency array means it runs once when the component mounts
-
+    if (!hasStarted) {
+      handleStartButtonClick();
+      setHasStarted(true);
+    }
+  }, [hasStarted]);
 
   
   
@@ -47,17 +57,14 @@ const page = () => {
         <div className="mt-3 w-1/2 ml-60 flex justify-end">
             <input clasName="w-80 mt-10 shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Destination"></input>
             <Link href="/path">
-              <button onClick={handleStartButtonClick}
+              <button 
               className=" ml-5 bg-[#7975FF] rounded-lg text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                   Start
               </button>
             </Link>
 
 
-            <button onClick={handleStartButtonClick}
-              className=" ml-5 bg-[#7975FF] rounded-lg text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                  Start
-              </button>
+            
             
             
         </div>
