@@ -5,8 +5,12 @@ import Link from 'next/link';
 const page = () => {
   return (
     <div className="flex">
-        <div className="w-1/2">
+        <div className="w-1/2 p-20 ">
+            <div className="rounded-lg overflow-hidden">
+            <iframe href="https://www.mappedin.com/" title="Mappedin Map" name="Mappedin Map" scrolling="no" width="100%" height="650" frameborder="0"  src="https://maker.mappedin.com/map/65acac5f04c23e7916b1d107?embedded=true"></iframe>
 
+            </div>
+       
         </div>
         <div className="flex w-1/2 h-screen bg-white/[0.3] items-center justify-center">
             <div className="">
