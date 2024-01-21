@@ -7,9 +7,9 @@ import {
 } from "@mappedin/mappedin-js";
 import "@mappedin/mappedin-js/lib/mappedin.css";
 import { useEffect, useMemo, useState } from "react";
-import useMapChanged from "@/hooks/useMapChanged";
-import useMapView from "@/hooks/useMapView";
-import useVenueMaker from "@/hooks/useVenueMaker";
+import useMapChanged from "../useMapChanged";
+import useMapView from "../useMapView";
+import useVenueMaker from "../useVenueMaker";
 import "../styles.css";
 const TextToSpeechService = {
   speak: (text) => {

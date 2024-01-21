@@ -7,8 +7,8 @@ import {
     E_SDK_EVENT,
   } from "@mappedin/mappedin-js";
   import React, { useRef, useEffect, useMemo } from "react";
-  import useVenue from "../hooks/useVenue";
-  import useMapView from "../hooks/useMapView";
+  import useVenue from "../app/useVenue";
+  import useMapView from "../app/useMapView";
   import "@mappedin/mappedin-js/lib/mappedin.css";
   
   export default function Map() {

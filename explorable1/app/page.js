@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import 'regenerator-runtime/runtime';
 
-import Dictaphone from '@/components/Dictaphone';
+import Dictaphone from './Dictaphone';
 
 const Home = () => {
   const [isLocationAllowed, setIsLocationAllowed] = useState(false);
@@ -71,7 +71,7 @@ const Home = () => {
         </div>
       </div>
       {/*include the dictaphone*/}
-      <Dictaphone />
+      {/* <Dictaphone /> */}
     </section>
   );
 };

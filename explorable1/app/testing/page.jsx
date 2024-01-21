@@ -5,7 +5,7 @@ import 'regenerator-runtime/runtime';
 
 
 const DictaphoneWithNoSSR = dynamic(
-  () => import('@/components/Dictaphone'),
+  () => import('@/app/Dictaphone'),
   { ssr: false }
 );
 
