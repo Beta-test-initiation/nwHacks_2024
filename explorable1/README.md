@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Inspiration
+In a world brimming with technological advancements, innovation must reach everyone, including those with visual impairments. We envisioned ExploreAble as a bridge between technology and accessibility, providing a seamless and enriching walking experience through new indoor environments for all users.
 
-## Getting Started
+## What it does
+ExploreAble is a virtual walking assistant designed to revolutionize how people, especially those who are visually impaired, interact with their surroundings. This innovative web app provides detailed audio descriptions of the environment, visual and audio descriptions of directions through intuitive interfaces, and real-time support, ensuring a safe and enjoyable walking experience.
 
-First, run the development server:
+## How we built it
+**Setting up the environment**: We utilized the seamless page navigation capabilities of NEXT JS paired with tailwind css for our development environment and UI. Using Web Speech APIs and geolocation, we enabled user input to offer the best possible experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Visual and Audio Directions**: Utilizing the MappedIn SDK, ExploreAble offers precise visual and auditory walking directions. The audio directions are crafted to be clear and easy to follow for visually impaired users.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Environmental Descriptions:**  The app describes the user surroundings. Whether it's identifying street names, describing nearby landmarks, or alerting about potential obstacles, ExploreAble provides a comprehensive understanding of the user's environment.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**User-Friendly Interface for Visually Impaired Users:** With an interface designed with the visually impaired in mind, ExploreAble is equipped with voice commands, large text options, and high-contrast visuals, ensuring ease of use for all.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Challenges we ran into
 
-## Learn More
+During the integration process of MappedIn's API into our application, we encountered several challenges. Discrepancies between the hackathon's hooks and the provided documentation posed an initial hurdle. Additionally, we confronted server-side rendering (SSR) issues with the implementation of maps in NEXT JS.
 
-To learn more about Next.js, take a look at the following resources:
+Our attempt to utilize the MapMaker frame proved insufficient as it lacked the essential information required for the successful implementation of our desired functionality. The acquisition and real-time updating of audio and location permissions proved to be a complex task.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The occurrence of merge conflicts, though a common occurrence, added a layer of complexity to the integration process, resulting in a laborious and exhaustive resolution process. Furthermore, we faced multiple runtime errors with NEXT JS when attempting to integrate components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+After encountering a dead-end in the search for a voice-based chatbot solution, we opted to develop our proprietary communication system where we encountered challenges in the interpretation of audio-based instructions, leading to difficulties in seamless execution.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Accomplishments that we're proud of
+**Effective Integration of Technologies:** We successfully integrated the Mappedin API with the React packages and Node.js, creating a seamless and efficient user experience.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Accessible Design:** We are proud of developing an app that is highly accessible to visually impaired users, featuring voice navigation and clear audio descriptions, which make independent mobility easier.
+
+**Real-Time Navigation and Descriptions:** Our application effectively provides real-time navigation and environmental descriptions, enhancing the walking experience for all users.
+
+## What we learned
+**Importance of Inclusive Design:** We gained a deeper understanding of the challenges faced by visually impaired individuals and the importance of creating technology that is accessible to everyone.
+
+**Complexities of Voice Recognition Technology:** We learned about the intricacies of voice recognition and the importance of extensive testing in diverse environments to ensure reliability.
+
+## What's next for ExploreAble
+**Expanding Geographic Coverage:** We plan to integrate more comprehensive mapping data to expand the geographic availability of the app.
+
+**Enhancing Voice Recognition Accuracy:** Continued development and training of the Speech-to-Text technology to improve accuracy and responsiveness.
+
+**Partnerships for Real-Time Data:** We aim to partner with city authorities and public transportation agencies to incorporate real-time updates about the environment and public transport.
+
+**Community Engagement Features:** Implementing features that allow users to share their experiences and tips, fostering a community of support and information sharing.
+
+**Continuous User Interface Improvements:** Regular updates to the user interface to make it even more intuitive and user-friendly for people with various degrees of visual impairment.
